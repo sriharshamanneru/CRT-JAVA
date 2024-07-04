@@ -1,0 +1,75 @@
+Write a program to find the element of maximum value in each row.
+
+Input Format
+
+The first input corresponds to the number of rows. The second input corresponds to the number of columns. The third input corresponds to the elements of the 2D array.
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+The output corresponds to the maximum element in each row.
+
+Sample Input 0
+
+3
+3
+1 4 9
+3 5 1
+2 8 5
+Sample Output 0
+
+9
+5
+8
+Sample Input 1
+
+4
+3
+8 1 7
+3 4 5
+6 9 3
+2 2 2
+Sample Output 1
+
+8
+5
+9
+2
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) 
+    {
+        Scanner s=new Scanner(System.in);
+        int rows=s.nextInt(),i,j,t,k;
+        int cols=s.nextInt();
+        int a[][]=new int[rows][cols];
+        for(i=0;i<rows;i++)
+        {
+            for(j=0;j<cols;j++)
+            {
+              a[i][j]=s.nextInt();
+                
+            }
+        }
+        for(i=0;i<rows;i++)
+        {
+            int l=a[i][0];
+            for(j=0;j<cols;j++)
+            {                
+                    if(l<a[i][j])
+                    {
+                        l=a[i][j];
+                    }
+                
+           }
+          System.out.println(l);
+
+        }
+    }
+}
